@@ -363,3 +363,13 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.T4.cs
+/Paper.bcf
+/Paper.blg
+/Paper.fdb_latexmk
+/Paper.fls
+/Paper.log
+/Paper.out
+/Paper.run.xml
+/Paper.synctex.gz
+/Paper.aux
+/Paper.bbl
