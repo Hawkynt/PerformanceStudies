@@ -2,7 +2,7 @@
 
 ## Overview
 
-**PerformanceStudies** is a C# repository dedicated to demonstrating and measuring low-level performance optimizations. This collection showcases techniques aimed at maximizing CPU efficiency through microoptimizations, covering areas like cache usage, pipeline utilization, register management, and instruction execution. Each example includes benchmarks and explanations to help developers understand the impact of each optimization.
+**PerformanceStudies** is a C# repository dedicated to demonstrating and measuring low-level performance optimizations ([Paper](Paper.pdf)). This collection showcases techniques aimed at maximizing CPU efficiency through microoptimizations, covering areas like cache usage, pipeline utilization, register management, and instruction execution. Each example includes benchmarks and explanations to help developers understand the impact of each optimization.
 
 ## Features
 
