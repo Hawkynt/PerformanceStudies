@@ -23,7 +23,7 @@
 
 ### Prerequisites
 
-- [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0) or later
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or later
 - [BenchmarkDotNet](https://benchmarkdotnet.org/) for benchmarking and measuring performance
 
 ### Installation
@@ -31,7 +31,7 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/Hawkynt/PerformanceStudies.git
+git clone https://github.com/Hawkynt/PerformanceStudies
 cd PerformanceStudies
 ```
 
