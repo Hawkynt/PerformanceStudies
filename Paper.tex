@@ -197,10 +197,23 @@ The statistical tests included:
 All statistical analyses were performed using the built-in tools provided by \texttt{BenchmarkDotNet}. In cases where additional granularity was needed, raw data was exported for further inspection using standard spreadsheet software. P-values were calculated where applicable to determine the significance of observed improvements, with P < 0.05 considered statistically significant.
 
 \section{Results}
+tbd: it does matter
 
 \section{Discussion}
 
+The results of this study illustrate the significant performance improvements achievable through targeted microoptimization techniques in \Csharp. Each optimization addressed a specific aspect of CPU execution, and collectively demonstrated their effectiveness in enhancing throughput and minimizing latency. 
+
+These results underscore the importance of understanding both high-level language constructs and low-level CPU architecture to achieve optimal performance. However, the findings also highlight certain trade-offs. For example, techniques like unsafe pointers and manual unrolling increase code complexity and risk of errors, emphasizing the need for careful application.
+
+Future work could explore the interplay of these techniques with automated optimization tools or investigate their applicability in other high-level languages. Additionally, expanding the analysis to include power consumption and hardware-specific behaviors (e.g., AMD vs. Intel architectures) would provide a more comprehensive view of their impact.
+
 \section{Conclusion and Outlook}
+
+This study demonstrates that microoptimizations in \Csharp can bridge the gap between high-level abstractions and low-level hardware execution, achieving substantial performance improvements in critical scenarios. Oldschool low-level techniques have proven effective in reducing execution time and maximizing CPU resource utilization.
+
+The findings provide a roadmap for developers working on performance-critical applications, offering practical strategies to optimize execution and overcome compiler limitations. By understanding and applying these optimizations, developers can unlock more potential of modern CPUs, ensuring their applications meet stringent performance demands.
+
+Looking ahead, the integration of these techniques into compiler toolchains or runtime environments holds promise for simplifying their application. Advances in hardware, such as broader adoption of AVX-512 or more robust speculative execution mechanisms, will further enhance the relevance and efficacy of these strategies. Finally, as performance optimization becomes increasingly critical in fields like artificial intelligence and real-time analytics, the importance of bridging software and hardware capabilities will only grow.
 
 \section{References}
 
