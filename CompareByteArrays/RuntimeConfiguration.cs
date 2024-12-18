@@ -8,7 +8,7 @@ using System;
 
 internal static class RuntimeConfiguration {
 
-  public static bool IsLongHardwareAccelerated => IntPtr.Size == 8;
+  public static bool IsLongHardwareAccelerated => IntPtr.Size >= 8;
 #if SUPPORTS_VECTOR_IS_HARDWARE_ACCELERATED
   public static bool IsVector128HardwareAccelerated => Vector128.IsHardwareAccelerated;
   public static bool IsVector256HardwareAccelerated => Vector256.IsHardwareAccelerated;
