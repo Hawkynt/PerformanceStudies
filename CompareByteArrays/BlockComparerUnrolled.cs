@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Corlib;
 
 namespace Classes;
 
@@ -27,14 +28,14 @@ internal static unsafe class BlockComparerUnrolled {
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
   private static bool _CompareBytes(byte* source, byte* comparison, ref int count) {
     while (count >= 8) {
-      if (*source != *comparison ||
-          source[1] != comparison[1] ||
-          source[2] != comparison[2] ||
-          source[3] != comparison[3] ||
-          source[4] != comparison[4] ||
-          source[5] != comparison[5] ||
-          source[6] != comparison[6] ||
-          source[7] != comparison[7])
+      if (!(OpCodes.IsEqual(OpCodes.LoadByte(source), comparison) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 1), comparison, 1) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 2), comparison, 2) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 3), comparison, 3) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 4), comparison, 4) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 5), comparison, 5) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 6), comparison, 6) &&
+          OpCodes.IsEqual(OpCodes.LoadByte(source, 7), comparison, 7)))
         return false;
 
       source += 8;
@@ -44,7 +45,7 @@ internal static unsafe class BlockComparerUnrolled {
 
     // Handle remaining bytes
     while (count > 0) {
-      if (*source != *comparison)
+      if (!OpCodes.IsEqual(OpCodes.LoadByte(source), comparison))
         return false;
 
       ++source;

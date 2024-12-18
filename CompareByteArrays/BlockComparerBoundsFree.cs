@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Corlib;
 
 namespace Classes;
 
@@ -27,7 +28,7 @@ internal static unsafe class BlockComparerBoundsFree {
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
   private static bool _CompareBytes(byte* source, byte* comparison, ref int count) {
     while (count > 0) {
-      if (*source != *comparison)
+      if (!OpCodes.IsEqual(OpCodes.LoadByte(source), comparison))
         return false;
 
       ++source;

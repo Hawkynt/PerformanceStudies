@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Corlib;
 
 namespace Classes;
 
@@ -29,36 +30,26 @@ internal static unsafe class BlockComparerInstructionLevelParallelism {
     while (count >= 8) {
 
       // Load from source
-      var r0 = *source;
-      var r1 = source[1];
-      var r2 = source[2];
-      var r3 = source[3];
-      var r4 = source[4];
-      var r5 = source[5];
-      var r6 = source[6];
-      var r7 = source[7];
+      var r0 = OpCodes.DWLoadByte(source);
+      var r1 = OpCodes.DWLoadByte(source, 1);
+      var r2 = OpCodes.DWLoadByte(source, 2);
+      var r3 = OpCodes.DWLoadByte(source, 3);
+      var r4 = OpCodes.DWLoadByte(source, 4);
+      var r5 = OpCodes.DWLoadByte(source, 5);
+      var r6 = OpCodes.DWLoadByte(source, 6);
+      var r7 = OpCodes.DWLoadByte(source, 7);
 
       // XOR with comparison
-      r0 ^= *comparison;
-      r1 ^= comparison[1];
-      r2 ^= comparison[2];
-      r3 ^= comparison[3];
-      r4 ^= comparison[4];
-      r5 ^= comparison[5];
-      r6 ^= comparison[6];
-      r7 ^= comparison[7];
+      OpCodes.Compare(ref r0, OpCodes.LoadByte(comparison));
+      OpCodes.Compare(ref r1, OpCodes.LoadByte(comparison, 1));
+      OpCodes.Compare(ref r2, OpCodes.LoadByte(comparison, 2));
+      OpCodes.Compare(ref r3, OpCodes.LoadByte(comparison, 3));
+      OpCodes.Compare(ref r4, OpCodes.LoadByte(comparison, 4));
+      OpCodes.Compare(ref r5, OpCodes.LoadByte(comparison, 5));
+      OpCodes.Compare(ref r6, OpCodes.LoadByte(comparison, 6));
+      OpCodes.Compare(ref r7, OpCodes.LoadByte(comparison, 7));
 
-      // Combine results using OR in stages to reduce dependency
-      r0 |= r1;
-      r2 |= r3;
-      r4 |= r5;
-      r6 |= r7;
-
-      r0|=r2;
-      r4 |= r6;
-
-      var result = r0 | r4;
-      if (result != 0)
+      if (!OpCodes.IsZero(r0, r1, r2, r3, r4, r5, r6, r7))
         return false;
 
       source += 8;
@@ -68,7 +59,7 @@ internal static unsafe class BlockComparerInstructionLevelParallelism {
 
     // Handle remaining bytes
     for (; count > 0; ++source, ++comparison, --count)
-      if (*source != *comparison)
+      if (!OpCodes.IsEqual(OpCodes.LoadByte(source), comparison))
         return false;
 
     return true;

@@ -128,26 +128,26 @@ internal static unsafe class BlockComparerInterleaved {
           OpCodes.Compare(ref e1, e3);
           return OpCodes.IsZero(e0, e1);
         case 9:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadByte(source, 8);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadByte(comparison, 8);
           OpCodes.Compare(ref r0, r4);
           OpCodes.Compare(ref r1, r5);
           return OpCodes.IsZero(r0, r1);
         case 10:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadWord(source, 8);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadWord(comparison, 8);
           OpCodes.Compare(ref r0, r4);
           OpCodes.Compare(ref r1, r5);
           return OpCodes.IsZero(r0, r1);
         case 11:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadWord(source, 8);
           r2 = OpCodes.QWLoadByte(source, 10);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadWord(comparison, 8);
           r6 = OpCodes.QWLoadByte(comparison, 10);
           OpCodes.Compare(ref r0, r4);
@@ -155,18 +155,18 @@ internal static unsafe class BlockComparerInterleaved {
           OpCodes.Compare(ref r2, r6);
           return OpCodes.IsZero(r0, r1, r2);
         case 12:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadDWord(source, 8);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadDWord(comparison, 8);
           OpCodes.Compare(ref r0, r4);
           OpCodes.Compare(ref r1, r5);
           return OpCodes.IsZero(r0, r1);
         case 13:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadDWord(source, 8);
           r2 = OpCodes.QWLoadByte(source, 12);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadDWord(comparison, 8);
           r6 = OpCodes.QWLoadByte(comparison, 12);
           OpCodes.Compare(ref r0, r4);
@@ -174,10 +174,10 @@ internal static unsafe class BlockComparerInterleaved {
           OpCodes.Compare(ref r2, r6);
           return OpCodes.IsZero(r0, r1,r2);
         case 14:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadDWord(source, 8);
           r2 = OpCodes.QWLoadWord(source, 12);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadDWord(comparison, 8);
           r6 = OpCodes.QWLoadWord(comparison, 12);
           OpCodes.Compare(ref r0, r4);
@@ -185,11 +185,11 @@ internal static unsafe class BlockComparerInterleaved {
           OpCodes.Compare(ref r2, r6);
           return OpCodes.IsZero(r0, r1, r2);
         case 15:
-          r0 = OpCodes.QWLoadQWord(source, 0);
+          r0 = OpCodes.LoadQWord(source, 0);
           r1 = OpCodes.QWLoadDWord(source, 8);
           r2 = OpCodes.QWLoadWord(source, 12);
           r3 = OpCodes.QWLoadByte(source, 14);
-          r4 = OpCodes.QWLoadQWord(comparison, 0);
+          r4 = OpCodes.LoadQWord(comparison, 0);
           r5 = OpCodes.QWLoadDWord(comparison, 8);
           r6 = OpCodes.QWLoadWord(comparison, 12);
           r7 = OpCodes.QWLoadByte(comparison, 14);
@@ -259,34 +259,34 @@ internal static unsafe class BlockComparerInterleaved {
           return OpCodes.IsZero(r0, r1, r2, r3);
         case 24:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           OpCodes.Compare(ref r1, r4);
           return OpCodes.IsZero(r0, r1);
         case 25:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadByte(source, 24);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadByte(comparison, 24);
           OpCodes.Compare(ref r1, r4);
           OpCodes.Compare(ref r2, r5);
           return OpCodes.IsZero(r0, r1, r2);
         case 26:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadWord(source, 24);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadWord(comparison, 24);
           OpCodes.Compare(ref r1, r4);
           OpCodes.Compare(ref r2, r5);
           return OpCodes.IsZero(r0, r1, r2);
         case 27:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadWord(source, 24);
           r3 = OpCodes.QWLoadByte(source, 26);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadWord(comparison, 24);
           r6 = OpCodes.QWLoadByte(comparison, 26);
           OpCodes.Compare(ref r1, r4);
@@ -295,19 +295,19 @@ internal static unsafe class BlockComparerInterleaved {
           return OpCodes.IsZero(r0, r1, r2, r3);
         case 28:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadDWord(source, 24);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadDWord(comparison, 24);
           OpCodes.Compare(ref r1, r4);
           OpCodes.Compare(ref r2, r5);
           return OpCodes.IsZero(r0, r1, r2);
         case 29:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadDWord(source, 24);
           r3 = OpCodes.QWLoadByte(source, 28);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadDWord(comparison, 24);
           r6 = OpCodes.QWLoadByte(comparison, 28);
           OpCodes.Compare(ref r1, r4);
@@ -316,10 +316,10 @@ internal static unsafe class BlockComparerInterleaved {
           return OpCodes.IsZero(r0, r1, r2, r3);
         case 30:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadDWord(source, 24);
           r3 = OpCodes.QWLoadWord(source, 28);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadDWord(comparison, 24);
           r6 = OpCodes.QWLoadWord(comparison, 28);
           OpCodes.Compare(ref r1, r4);
@@ -328,11 +328,11 @@ internal static unsafe class BlockComparerInterleaved {
           return OpCodes.IsZero(r0, r1, r2, r3);
         case 31:
           r0 = OpCodes.LoadAndCompareDQWord(source, comparison, 0);
-          r1 = OpCodes.QWLoadQWord(source, 16);
+          r1 = OpCodes.LoadQWord(source, 16);
           r2 = OpCodes.QWLoadDWord(source, 24);
           r3 = OpCodes.QWLoadWord(source, 28);
           r8 = OpCodes.QWLoadByte(source, 30);
-          r4 = OpCodes.QWLoadQWord(comparison, 16);
+          r4 = OpCodes.LoadQWord(comparison, 16);
           r5 = OpCodes.QWLoadDWord(comparison, 24);
           r6 = OpCodes.QWLoadWord(comparison, 28);
           r7 = OpCodes.QWLoadByte(comparison, 30);
@@ -349,14 +349,14 @@ internal static unsafe class BlockComparerInterleaved {
 
           for (; count >= 48;) {
             
-            var x0 = OpCodes.DQWLoadDQWord(source, 0);
-            var x1 = OpCodes.DQWLoadDQWord(source, 16);
-            var x3 = OpCodes.DQWLoadDQWord(comparison, 0);
-            var x4 = OpCodes.DQWLoadDQWord(comparison, 16);
+            var x0 = OpCodes.LoadDQWord(source, 0);
+            var x1 = OpCodes.LoadDQWord(source, 16);
+            var x3 = OpCodes.LoadDQWord(comparison, 0);
+            var x4 = OpCodes.LoadDQWord(comparison, 16);
             OpCodes.Compare(ref x0, x3);
 
-            var x2 = OpCodes.DQWLoadDQWord(source, 32);
-            var x5 = OpCodes.DQWLoadDQWord(comparison, 32);
+            var x2 = OpCodes.LoadDQWord(source, 32);
+            var x5 = OpCodes.LoadDQWord(comparison, 32);
             OpCodes.Compare(ref x1, x4);
             OpCodes.Compare(ref x2, x5);
 

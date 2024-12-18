@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Corlib;
 
 namespace Classes;
 
@@ -27,16 +28,17 @@ internal static unsafe class BlockComparerBranchMinimized {
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
   private static bool _CompareBytes(byte* source, byte* comparison, ref int count) {
     while (count >= 8) {
-
-      var result = *source ^ *comparison;
-      result |= source[1] ^ comparison[1];
-      result |= source[2] ^ comparison[2];
-      result |= source[3] ^ comparison[3];
-      result |= source[4] ^ comparison[4];
-      result |= source[5] ^ comparison[5];
-      result |= source[6] ^ comparison[6];
-      result |= source[7] ^ comparison[7];
-      if (result != 0)
+      
+      if (!OpCodes.IsZero(
+      OpCodes.Xor(OpCodes.LoadByte(source), comparison),
+      OpCodes.Xor(OpCodes.LoadByte(source, 1), comparison, 1),
+      OpCodes.Xor(OpCodes.LoadByte(source, 2), comparison, 2),
+      OpCodes.Xor(OpCodes.LoadByte(source, 3), comparison, 3),
+      OpCodes.Xor(OpCodes.LoadByte(source, 4), comparison, 4),
+      OpCodes.Xor(OpCodes.LoadByte(source, 5), comparison, 5),
+      OpCodes.Xor(OpCodes.LoadByte(source, 6), comparison, 6),
+      OpCodes.Xor(OpCodes.LoadByte(source, 7), comparison, 7)
+      ))
         return false;
 
       source += 8;
@@ -46,7 +48,7 @@ internal static unsafe class BlockComparerBranchMinimized {
 
     // Handle remaining bytes
     for (; count > 0; ++source, ++comparison, --count)
-      if (*source != *comparison)
+      if (!OpCodes.IsEqual(OpCodes.LoadByte(source), comparison))
         return false;
 
     return true;
