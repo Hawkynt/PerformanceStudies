@@ -1,5 +1,22 @@
 # PerformanceStudies
 
+[![License](https://img.shields.io/github/license/Hawkynt/PerformanceStudies)](https://github.com/Hawkynt/PerformanceStudies/blob/main/LICENSE)
+[![Language](https://img.shields.io/github/languages/top/Hawkynt/PerformanceStudies?color=8957D5)](https://github.com/Hawkynt/PerformanceStudies)
+
+[![CI](https://github.com/Hawkynt/PerformanceStudies/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Hawkynt/PerformanceStudies/actions/workflows/ci.yml)
+![Last Commit](https://img.shields.io/github/last-commit/Hawkynt/PerformanceStudies?branch=main)
+![Activity](https://img.shields.io/github/commit-activity/m/Hawkynt/PerformanceStudies)
+
+[![Stars](https://img.shields.io/github/stars/Hawkynt/PerformanceStudies?color=FFD700)](https://github.com/Hawkynt/PerformanceStudies/stargazers)
+[![Forks](https://img.shields.io/github/forks/Hawkynt/PerformanceStudies?color=008080)](https://github.com/Hawkynt/PerformanceStudies/network/members)
+[![Issues](https://img.shields.io/github/issues/Hawkynt/PerformanceStudies)](https://github.com/Hawkynt/PerformanceStudies/issues)
+![Code Size](https://img.shields.io/github/languages/code-size/Hawkynt/PerformanceStudies?color=4CAF50)
+![Repo Size](https://img.shields.io/github/repo-size/Hawkynt/PerformanceStudies?color=FF9800)
+
+[![Release](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?sort=semver)](https://github.com/Hawkynt/PerformanceStudies/releases/latest)
+[![Nightly](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?include_prereleases=true&sort=date&label=nightly&color=FF9800)](https://github.com/Hawkynt/PerformanceStudies/releases)
+[![Downloads](https://img.shields.io/github/downloads/Hawkynt/PerformanceStudies/total)](https://github.com/Hawkynt/PerformanceStudies/releases)
+
 ## Overview
 
 **PerformanceStudies** is a C# repository dedicated to demonstrating and measuring low-level performance optimizations ([Paper](Paper.pdf)). This collection showcases techniques aimed at maximizing CPU efficiency through microoptimizations, covering areas like cache usage, pipeline utilization, register management, and instruction execution. Each example includes benchmarks and explanations to help developers understand the impact of each optimization.
