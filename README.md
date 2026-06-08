@@ -14,7 +14,7 @@
 ![Repo Size](https://img.shields.io/github/repo-size/Hawkynt/PerformanceStudies?color=FF9800)
 
 [![Release](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?sort=semver)](https://github.com/Hawkynt/PerformanceStudies/releases/latest)
-[![Nightly](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?include_prereleases=true&sort=date&label=nightly&color=FF9800)](https://github.com/Hawkynt/PerformanceStudies/releases)
+[![Nightly](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?include_prereleases&sort=date&label=nightly&color=FF9800)](https://github.com/Hawkynt/PerformanceStudies/releases)
 [![Downloads](https://img.shields.io/github/downloads/Hawkynt/PerformanceStudies/total)](https://github.com/Hawkynt/PerformanceStudies/releases)
 
 > A C# repository demonstrating and measuring low-level performance optimizations ([Paper](Paper.pdf)) — cache locality, pipeline utilization, register management and instruction-level tricks, each with benchmarks and an explanation of why it wins.
