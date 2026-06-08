@@ -13,7 +13,7 @@
 ![Code Size](https://img.shields.io/github/languages/code-size/Hawkynt/PerformanceStudies?color=4CAF50)
 ![Repo Size](https://img.shields.io/github/repo-size/Hawkynt/PerformanceStudies?color=FF9800)
 
-[![Release](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?sort=semver)](https://github.com/Hawkynt/PerformanceStudies/releases/latest)
+[![Release](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies)](https://github.com/Hawkynt/PerformanceStudies/releases/latest)
 [![Nightly](https://img.shields.io/github/v/release/Hawkynt/PerformanceStudies?include_prereleases&sort=date&label=nightly&color=FF9800)](https://github.com/Hawkynt/PerformanceStudies/releases)
 [![Downloads](https://img.shields.io/github/downloads/Hawkynt/PerformanceStudies/total)](https://github.com/Hawkynt/PerformanceStudies/releases)
 
