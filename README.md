@@ -19,6 +19,16 @@
 
 > A C# repository demonstrating and measuring low-level performance optimizations ([Paper](Paper.pdf)) — cache locality, pipeline utilization, register management and instruction-level tricks, each with benchmarks and an explanation of why it wins.
 
+## 🧭 Vision
+
+Most advice about fast C# is folklore: someone says a loop is faster unrolled, nobody measures, and
+the claim outlives the hardware it was true on. This repository is the opposite arrangement — every
+technique here comes with a benchmark that runs on your machine and an explanation of the mechanism
+that makes it win, so the claim can be checked rather than believed.
+
+It is a study collection, not a library. The point is the reasoning about caches, pipelines,
+registers and instruction selection; the code is the evidence for it.
+
 ## ✨ Features
 
 - **Cache Optimizations**: Techniques for improving memory locality and reducing cache misses.
@@ -26,22 +36,12 @@
 - **Register File Management**: Efficient use of registers through local variables and inlining.
 - **Instruction Execution**: Intrinsic functions and bit manipulation for efficient instruction handling.
 
-## Optimization Techniques Included
-
-- **Loop Unrolling**: Reduces loop overhead for better pipeline utilization.
-- **Branchless Programming**: Minimizes costly branches and mispredictions.
-- **Memory Allocation with `stackalloc`**: Leverages stack memory for small arrays to improve cache locality.
-- **Hardware Intrinsics**: Uses SIMD instructions and operations like fused multiply-add (FMA) to reduce latency.
-- **Bit Manipulation Hacks**: Efficiently handles bit-level operations using popcount, rotate, and conditional moves.
-
-## 📦 Getting Started
+## 📦 Installation
 
 ### Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or later
 - [BenchmarkDotNet](https://benchmarkdotnet.org/) for benchmarking and measuring performance
-
-### Installation
 
 Clone the repository:
 
@@ -50,15 +50,31 @@ git clone https://github.com/Hawkynt/PerformanceStudies
 cd PerformanceStudies
 ```
 
-### Usage
+## 🚀 Quick start
 
-1. **Run Benchmarks**: To measure the performance of each optimization, execute the benchmark suite:
+Run the benchmark suite to measure every optimization on your own hardware:
 
-   ```bash
-   dotnet run -c Release
-   ```
+```bash
+dotnet run -c Release
+```
 
-2. **Explore Code Examples**: Each optimization is contained in its own class with comments explaining the techniques used and their expected performance impact.
+Each optimization lives in its own class, with comments explaining the technique and the expected
+performance impact — so a number that disagrees with the comment is itself a finding.
+
+## 📚 Optimization techniques included
+
+- **Loop Unrolling**: Reduces loop overhead for better pipeline utilization.
+- **Branchless Programming**: Minimizes costly branches and mispredictions.
+- **Memory Allocation with `stackalloc`**: Leverages stack memory for small arrays to improve cache locality.
+- **Hardware Intrinsics**: Uses SIMD instructions and operations like fused multiply-add (FMA) to reduce latency.
+- **Bit Manipulation Hacks**: Efficiently handles bit-level operations using popcount, rotate, and conditional moves.
+
+## 🛠️ Building
+
+```bash
+dotnet build -c Release
+dotnet test
+```
 
 ## 🤝 Contributing
 
